@@ -15,7 +15,11 @@ const randomHex = randomColor({
   hue: `${hue}`,
   luminosity: `${luminosity}`,
 });
-const string = `###############################
+
+const coloredString = chalk.hex(randomHex);
+
+console.log(
+  coloredString(`###############################
 ###############################
 ###############################
 #####                     #####
@@ -23,7 +27,5 @@ const string = `###############################
 #####                     #####
 ###############################
 ###############################
-###############################`;
-const coloredString = chalk.hex(randomHex).visible(string);
-
-console.log(coloredString);
+###############################`),
+);
