@@ -15,17 +15,57 @@ const randomHex = randomColor({
   hue: `${hue}`,
   luminosity: `${luminosity}`,
 });
-
 const coloredString = chalk.hex(randomHex);
 
-console.log(
-  coloredString(`###############################
-###############################
-###############################
-#####                     #####
-#####      ${randomHex}        #####
-#####                     #####
-###############################
-###############################
-###############################`),
-);
+if (hue === 'ask') {
+  console.log('Please provide hue and/or luminosity!');
+} else {
+  console.log(
+    coloredString(`
+  ###############################
+  ###############################
+  ###############################
+  #####                     #####
+  #####      ${randomHex}        #####
+  #####                     #####
+  ###############################
+  ###############################
+  ###############################
+  `),
+  );
+}
+
+// Below are stretch goal attempts
+
+// const col = 31;
+// const row = 9;
+
+// let chars = '#';
+// let result;
+
+// let outline = function () {
+//   for (let i = 0; i < (row - 3) / 2; i++) {
+//     result = '';
+//     for (let j = 0; j < col; j++) {
+//       result += chars;
+//     }
+//     console.log(result);
+//   }
+// };
+
+// let inline = function () {
+//   let result = '';
+//   for (let i = 0; i < col / 3; i++) {
+//     result += chars;
+//   }
+//   console.log(result);
+// };
+
+// let box = function () {
+//   outline();
+//   inline();
+//   console.log('TEST');
+//   outline();
+// };
+
+// box();
